@@ -1,5 +1,7 @@
-const base_Url='https://restcountries.com/v3.1/name/';
-function fetchCountries(name){ return fetch(`${base_Url}/${name}?fields=name,capital,population,flags,languages`).then(
+const BASE_URL = 'https://restcountries.com/v3.1/name';
+
+const fetchCountries = name => {
+  return fetch(`${BASE_URL}/${name}?fields=name,capital,population,flags,languages`).then(
     response => {
       if (response.status === 404) {
         return Promise.reject(new Error());
@@ -8,4 +10,5 @@ function fetchCountries(name){ return fetch(`${base_Url}/${name}?fields=name,cap
     },
   );
 };
-export {fetchCountries};
+
+export { fetchCountries };

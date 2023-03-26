@@ -51,6 +51,6 @@ const createInfoMarkup=data=>{
     )=>`<h1><img src="${flags.svg}" alt="${name.official}" width=60 px heigth=60 px>${name.official}</h1>
     <p>Capital:${capital}<p>
     <p>Population:${population}<p>
-    <p>Languages:${languages}<p>`,);
+    <p>Languages:${Object.values(languages)}<p>`,);
 };
 inputEle.addEventListener('input', debounce(inputHandler, DEBOUNCE_DELAY));
